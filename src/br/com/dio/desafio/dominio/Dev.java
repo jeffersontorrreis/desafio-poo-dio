@@ -37,6 +37,8 @@ public class Dev {
                 .sum();*/
     }
 
+    
+
 
     public String getNome() {
         return nome;

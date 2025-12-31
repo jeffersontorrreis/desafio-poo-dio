@@ -1,7 +1,4 @@
-import br.com.dio.desafio.dominio.Bootcamp;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Dev;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -38,25 +35,32 @@ public class Main {
         devCamila.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         devCamila.progredir();
-        devCamila.progredir();
         System.out.println("-");
         System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
         System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
         System.out.println("XP:" + devCamila.calcularTotalXp());
-
         System.out.println("-------");
-
+        Certificado cert = new Certificado(devCamila);
+        System.out.printf("Certificamos que %s%n", cert.getDev().getNome());
+        System.out.println("em "+ cert.getDataEmissao() + " concluiu");
+        System.out.println(cert.getDev().getConteudosConcluidos());
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
         Dev devJoao = new Dev();
         devJoao.setNome("Joao");
         devJoao.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         devJoao.progredir();
-        devJoao.progredir();
-        devJoao.progredir();
         System.out.println("-");
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println("-------");
+        Certificado cert2 = new Certificado(devJoao);
+        System.out.printf("Certificamos que %s%n", cert2.getDev().getNome());
+        System.out.println("em "+ cert2.getDataEmissao() + " concluiu");
+        System.out.println(cert2.getDev().getConteudosConcluidos());
 
     }
 
